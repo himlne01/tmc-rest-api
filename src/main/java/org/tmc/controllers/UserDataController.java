@@ -10,7 +10,7 @@ import org.tmc.models.UserData;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = {"*"})
 @RequestMapping("/api/user")
 public class UserDataController {
 

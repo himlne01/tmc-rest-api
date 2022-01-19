@@ -10,7 +10,7 @@ import org.tmc.models.Cuisine;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = {"*"})
 @RequestMapping("/api/cuisine")
 public class CuisineController {
 
