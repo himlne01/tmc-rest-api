@@ -32,7 +32,7 @@ public class AuthController {
         this.appUserService = appUserService;
     }
 
-    @CrossOrigin(origins={"http://localhost:3000","http://127.0.0.1:3000"})
+//    @CrossOrigin(origins={"http://localhost:3000","http://127.0.0.1:3000"})
     @PostMapping("/authenticate")
     public ResponseEntity<?> authenticate(@RequestBody Map<String, String> credentials) {
         UsernamePasswordAuthenticationToken authToken =
@@ -60,7 +60,7 @@ public class AuthController {
         return new ResponseEntity<>(HttpStatus.FORBIDDEN);
     }
 
-    @CrossOrigin(origins={"http://localhost:3000","http://127.0.0.1:3000"})
+//    @CrossOrigin(origins={"http://localhost:3000","http://127.0.0.1:3000"})
     @PostMapping("/create_account")
     public ResponseEntity<?> createAccount(@RequestBody Map<String, String> credentials) {
         AppUser appUser = null;

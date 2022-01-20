@@ -11,7 +11,7 @@ import org.tmc.models.Ingredient;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"*"})
+//@CrossOrigin(origins = {"*"})
 @RequestMapping("/api/ingredient")
 public class IngredientController {
 
