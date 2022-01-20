@@ -1,7 +1,7 @@
 FROM public.ecr.aws/docker/library/maven:latest as build
 COPY pom.xml ./pom.xml
 COPY src ./src
-RUN mvn clean package
+RUN mvn clean package -Dmaven.test.skip=true
 
 FROM public.ecr.aws/docker/library/maven:eclipse-temurin
 COPY --from=build target/*.jar ./ 
