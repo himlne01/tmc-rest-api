@@ -13,6 +13,8 @@ public interface RecipeRepository {
 
     List<Recipe> findAllByCuisineId(int cuisineId);
 
+    List<Recipe> findAllByRecipeName(String recipeName);
+
     Recipe findById(int recipeId);
 
     boolean findByUserIdAndRecipeName(int userId, String recipeName);

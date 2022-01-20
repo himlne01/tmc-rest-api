@@ -47,6 +47,13 @@ class RecipeJdbcTemplateRepositoryTest {
     }
 
     @Test
+    void shouldFindAllByRecipeName() {
+        List<Recipe> recipes = repository.findAllByRecipeName("Lasagna");
+        assertNotNull(recipes);
+        assertEquals(1, recipes.size());
+    }
+
+    @Test
     void shouldAdd() {
         int before = repository.findAll().size();
         Recipe toAdd = makeRecipe();

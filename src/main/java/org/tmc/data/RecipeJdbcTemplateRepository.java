@@ -48,6 +48,15 @@ public class RecipeJdbcTemplateRepository implements RecipeRepository {
     }
 
     @Override
+    public List<Recipe> findAllByRecipeName(String recipeName) {
+
+        final String sql = "select recipe_id, `name`, `description`, image_ref, date_posted, cuisine_id, app_user_id "
+                + "from recipe where `name` like ?;";
+
+        return jdbcTemplate.query(sql, new RecipeMapper(), "%" + recipeName + "%");
+    }
+
+    @Override
     @Transactional
     public Recipe findById(int recipeId) {
 

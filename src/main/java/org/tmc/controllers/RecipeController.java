@@ -37,6 +37,11 @@ public class RecipeController {
         return service.findAllByCuisineId(cuisineId);
     }
 
+    @GetMapping("/name/{recipeName}")
+    public List<Recipe> findAllByRecipeName(@PathVariable String recipeName) {
+        return service.findAllByRecipeName(recipeName);
+    }
+
     @GetMapping("/{recipeId}")
     public ResponseEntity<Object> findById(@PathVariable int recipeId) {
 

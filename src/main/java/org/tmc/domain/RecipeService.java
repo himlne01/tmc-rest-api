@@ -51,6 +51,15 @@ public class RecipeService {
         return all;
     }
 
+    public List<Recipe> findAllByRecipeName(String recipeName) {
+        List<Recipe> all = recipeRepository.findAllByRecipeName(recipeName);
+        for(Recipe recipe : all) {
+            recipe = hydrate(recipe);
+        }
+
+        return all;
+    }
+
     public Result<Recipe> findById(int recipeId) {
         Result<Recipe> result = new Result<>();
         Recipe possibleNull = recipeRepository.findById(recipeId);
